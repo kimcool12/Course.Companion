@@ -1,0 +1,72 @@
+@use "variables" as *;
+
+.CardSection {
+  background: radial-gradient(circle at top left, $orange-peel-900, $black-950);
+
+  .__cardCointainer {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 0 3rem 2rem;
+    gap: 4rem;
+
+    ._h2 {
+      text-transform: uppercase;
+      padding: 1rem;
+      font-size: 2rem;
+    }
+
+    ._cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 2rem;
+
+      .card {
+        background: $black-950;
+        width: 70%;
+        padding: 2rem 2rem;
+        border-radius: 9px;
+        transition: border-color 0.3s ease-in-out;
+        margin: 2rem;
+        border: 2px solid transparent;
+        box-shadow: 0.2px 0.2px 4px 0.2px $secondary-color;
+
+        &:hover {
+          border: 2px solid $secondary-color;
+        }
+        ._cardH3 {
+          background: $secondary-color;
+          font-size: 0.7rem;
+          text-transform: uppercase;
+          display: inline-block;
+          padding: 3px 9px;
+          border-radius: 20px;
+        }
+        p {
+          margin: 1rem 0 1rem 0;
+          font-size: 0.7rem;
+        }
+        a {
+          text-decoration: none;
+          display: flex;
+          flex-direction: column;
+          color: $secondary-color;
+        }
+      }
+    }
+
+    ._viewore {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-start;
+      text-decoration: none;
+      background: $secondary-color;
+      border-radius: 3rem;
+      padding: 0.6rem 2rem;
+      color: white;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background: $orange-peel-600;
+      }
+    }
+  }
+}

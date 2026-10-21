@@ -1,0 +1,128 @@
+@use "variables" as *;
+
+//Hidden
+.hidden {
+  display: none;
+}
+// NAVIGATION BAR
+.nav__background {
+  background: rgba(0, 0, 0, 0.714);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  left: 1rem;
+  right: 1rem;
+  border-radius: 5rem;
+  position: fixed;
+  top: 1rem;
+  z-index: 100;
+}
+.header {
+  padding: 1rem 0.7rem;
+
+  ._logo {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    padding-left: 2rem;
+
+    a {
+      text-decoration: none;
+      color: $black-50;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+
+      .hdot {
+        color: $secondary-color;
+      }
+      .hblue {
+        color: $Primary-color;
+      }
+    }
+  }
+  ._h1 {
+    font-size: 1.7rem;
+    display: flex;
+    text-align: center;
+  }
+  .__right {
+    display: flex;
+    padding-right: 2rem;
+    flex-direction: row-reverse;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.6rem;
+    margin: auto 0;
+  }
+
+  ._country {
+    color: $blue-ribbon-400;
+    margin-bottom: auto;
+  }
+
+  .__navigation {
+    display: inline;
+    align-self: inherit;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-top: auto;
+    cursor: pointer;
+
+    :hover {
+      color: $black-600;
+      transition: all 0.1s ease-in;
+    }
+  }
+}
+.header__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+}
+
+//NAVIGATION LIST for Mobile
+
+.navigation {
+  background: $black-950;
+  height: 100vh;
+  width: 30%;
+  padding: 1rem 0.8rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  animation: navslide 0.5s ease-in-out 0s;
+
+  @keyframes navslide {
+    from {
+      transform: translatex(-10rem);
+    }
+    to {
+      transform: translatex(0);
+    }
+  }
+  .__lists {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    ._list {
+      font-size: 0.9rem;
+      font-style: normal;
+      font-family: "Roboto", sans-serif;
+      font-weight: 600;
+      a {
+        text-decoration: none;
+        color: $orange-peel-100;
+      }
+    }
+  }
+}
