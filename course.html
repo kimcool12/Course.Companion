@@ -21,7 +21,7 @@
       content="https://YOUR-WEBSITE-ADDRESS/src/png/logo.png"
     />
 
-    <link rel="icon" type="image/svg+xml" href="src/png/logo.svg" />
+    <link rel="icon" type="image/svg+xml" href="/src/png/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -60,7 +60,9 @@
           </div>
           <div class="__right">
             <div class="_country">
-              <span>🇳🇬</span>
+              <span class="countryflag">
+                <img src="" alt="Country flag" />
+              </span>
             </div>
             <div class="__navigation">
               <span class="_nav-open"
@@ -77,7 +79,7 @@
 
     <!--//////////////////////////////////// -->
     <!-- Navagation bar -->
-    <nav class="navigation hidden">
+    <nav class="navigation .nvagation--open">
       <ul class="__lists">
         <li class="_list">
           <a href="index.html"
@@ -85,18 +87,18 @@
           >
         </li>
         <li class="_list">
-          <a href="src/Other html/course.html"
+          <a href="course.html"
             ><ion-icon name="return-down-forward-outline"></ion-icon> Courses</a
           >
         </li>
         <li class="_list">
-          <a href="src/Other html/PQ.html"
+          <a href="src/pages/TimeTable.html"
             ><ion-icon name="return-down-forward-outline"></ion-icon> Past
             Question</a
           >
         </li>
         <li class="_list">
-          <a href="src/Other html/TimeTable.html"
+          <a href="src/pages/TimeTable.html"
             ><ion-icon name="return-down-forward-outline"></ion-icon> Time
             Table</a
           >
@@ -104,5 +106,14 @@
       </ul>
     </nav>
     <!-- /////////////////////////////////////////// -->
+
+    <section class="CardSection2">
+      <div class="__cardCointainer2">
+        <h2 class="_h2">All Courses here</h2>
+        <div class="_cards2"></div>
+      </div>
+    </section>
+
+    <script type="module" src="src/js/main.js"></script>
   </body>
 </html>

@@ -6,7 +6,7 @@
       name="description"
       content="Track your courses, download past questions and count down to exams. Built for Public Administration students at Obafemi Awolowo University"
     />
-
+    <script type="module" src="/src/js/main.js"></script>
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
@@ -21,7 +21,7 @@
       content="https://YOUR-WEBSITE-ADDRESS/src/png/logo.png"
     />
 
-    <link rel="icon" type="image/svg+xml" href="src/png/logo.svg" />
+    <link rel="icon" type="image/svg+xml" href="/src/png/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="src/style.css" />
@@ -39,6 +39,7 @@
       nomodule
       src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"
     ></script>
+
     <title>Course.Companion | Public Administration Study Hub for OAU</title>
   </head>
   <body>
@@ -56,7 +57,9 @@
           </div>
           <div class="__right">
             <div class="_country">
-              <span>🇳🇬</span>
+              <span class="countryflag">
+                <img src="" alt="Country flag" />
+              </span>
             </div>
             <div class="__navigation">
               <span class="_nav-open"
@@ -73,7 +76,7 @@
 
     <!--//////////////////////////////////// -->
     <!-- Navagation bar -->
-    <nav class="navigation hidden">
+    <nav class="navigation .nvagation--open">
       <ul class="__lists">
         <li class="_list">
           <a href="index.html"
@@ -81,18 +84,18 @@
           >
         </li>
         <li class="_list">
-          <a href="src/Other html/course.html"
+          <a href="course.html"
             ><ion-icon name="return-down-forward-outline"></ion-icon> Courses</a
           >
         </li>
         <li class="_list">
-          <a href="src/Other html/PQ.html"
+          <a href="/src/pages/PQ.html"
             ><ion-icon name="return-down-forward-outline"></ion-icon> Past
             Question</a
           >
         </li>
         <li class="_list">
-          <a href="src/Other html/TimeTable.html"
+          <a href="/src/pages/TimeTable.html"
             ><ion-icon name="return-down-forward-outline"></ion-icon> Time
             Table</a
           >
@@ -130,47 +133,77 @@
       <div class="__cardCointainer">
         <h2 class="_h2">What Are You Studying Today?</h2>
         <div class="_cards">
-          <!-- card 1 -->
-          <card class="card">
+          <!--  card 1
+          <article class="card">
             <h3 class="_cardH3">pad 304</h3>
             <p>Administrative law in Public admin II</p>
             <a href="#">Open &rarr;</a>
-          </card>
-          <!-- card 2 -->
-          <card class="card">
+          </article>
+          <article class="card">
             <h3 class="_cardH3">pad 304</h3>
             <p>Administrative law in Public admin II</p>
             <a href="#">Open &rarr;</a>
-          </card>
-          <!-- card3  -->
-          <card class="card">
+          </article>
+          <article class="card">
             <h3 class="_cardH3">pad 304</h3>
             <p>Administrative law in Public admin II</p>
             <a href="#">Open &rarr;</a>
-          </card>
-          <!-- card4  -->
-          <card class="card">
+          </article>
+          <article class="card">
             <h3 class="_cardH3">pad 304</h3>
             <p>Administrative law in Public admin II</p>
             <a href="#">Open &rarr;</a>
-          </card>
-          <!-- card5  -->
-          <card class="card">
+          </article>
+          <article class="card">
             <h3 class="_cardH3">pad 304</h3>
             <p>Administrative law in Public admin II</p>
             <a href="#">Open &rarr;</a>
-          </card>
-          <!-- card 6 -->
-          <card class="card">
+          </article>
+          <article class="card">
             <h3 class="_cardH3">pad 304</h3>
             <p>Administrative law in Public admin II</p>
             <a href="#">Open &rarr;</a>
-          </card>
-        </div>
-        <a href="src/Other html/course.html" class="_viewore"
-          >View more &rarr;</a
-        >
+          </article>
+        --></div>
+        <a href="course.html" class="_viewore">View more &rarr;</a>
       </div>
     </section>
+
+    <!-- ////////////////////////////////////// -->
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="content">
+        <div class="__continer">
+          <div class="_footerLists">
+            <img src="/src/png/100.avif" loading="lazy" />
+          </div>
+          <div class="_footerLists">
+            <img src="/src/png/Hom.avif" loading="lazy" />
+          </div>
+          <div class="_footerLists">
+            <img src="/src/png/mle8.avif" loading="lazy" />
+          </div>
+          <div class="_footerLists">
+            <img src="/src/png/winners.avif" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="details">
+          <h5>© 2026 Afolayan Olatunde. All rights reserved.</h5>
+
+          <ul class="links">
+            <li>
+              <a href="#"><ion-icon name="logo-linkedin"></ion-icon> </a>
+            </li>
+            <li>
+              <a href="#"><ion-icon name="logo-github"></ion-icon></a>
+            </li>
+            <li>
+              <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

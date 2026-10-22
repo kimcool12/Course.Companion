@@ -1,9 +1,5 @@
 @use "variables" as *;
 
-//Hidden
-.hidden {
-  display: none;
-}
 // NAVIGATION BAR
 .nav__background {
   background: rgba(0, 0, 0, 0.714);
@@ -60,20 +56,53 @@
 
   ._country {
     color: $blue-ribbon-400;
-    margin-bottom: auto;
-  }
 
+    img {
+      width: 1.8rem;
+      height: 1.8rem;
+      display: block;
+      border-radius: 3px;
+      border: 2px solid $blue-ribbon-400;
+      border-radius: 50%;
+    }
+  }
   .__navigation {
-    display: inline;
-    align-self: inherit;
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
     font-size: 1.5rem;
-    font-weight: 900;
-    margin-top: auto;
     cursor: pointer;
 
-    :hover {
-      color: $black-600;
-      transition: all 0.1s ease-in;
+    ._nav-open,
+    ._nav-close {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition:
+        opacity 0.3s ease-in-out,
+        transform 0.3s ease-in-out;
+    }
+
+    // CLOSED look
+    ._nav-open {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+    ._nav-close {
+      opacity: 0;
+      transform: rotate(-90deg);
+    }
+
+    // OPEN look (only when the wrapper has this class)
+    &--open {
+      ._nav-open {
+        opacity: 0;
+        transform: rotate(90deg);
+      }
+      ._nav-close {
+        opacity: 1;
+        transform: rotate(0deg);
+      }
     }
   }
 }
@@ -96,15 +125,11 @@
   left: 0;
   z-index: 101;
   animation: navslide 0.5s ease-in-out 0s;
+  transform: translateX(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
 
-  @keyframes navslide {
-    from {
-      transform: translatex(-10rem);
-    }
-    to {
-      transform: translatex(0);
-    }
-  }
   .__lists {
     font-size: 0.8rem;
     display: flex;
@@ -125,4 +150,9 @@
       }
     }
   }
+}
+.navigation--open {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
 }
