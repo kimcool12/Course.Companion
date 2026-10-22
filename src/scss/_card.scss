@@ -66,6 +66,24 @@
         background: $orange-peel-600;
       }
     }
+
+    @media (max-width: 600px) {
+      padding: 6rem 1rem 2rem 1rem;
+      gap: 2rem;
+
+      ._h2 {
+        font-size: 1.4rem;
+        padding: 0;
+      }
+      ._cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        .card {
+          margin: 0;
+          padding: 1.2rem;
+        }
+      }
+    }
   }
 }
 
@@ -121,6 +139,24 @@
           display: inline-block;
           color: $secondary-color;
         }
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 6rem 1rem 2rem 1rem;
+    gap: 2rem;
+
+    ._h2 {
+      font-size: 1.4rem;
+      padding: 0;
+    }
+    ._cards2 {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      padding: 0;
+      .card {
+        padding: 1.2rem;
       }
     }
   }

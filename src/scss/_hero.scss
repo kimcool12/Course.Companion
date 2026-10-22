@@ -63,6 +63,25 @@
       font-size: 0.8rem;
       text-shadow: 1px 1px 1px $black-400;
     }
+
+    @media (max-width: 600px) {
+      .__text {
+        padding: 2rem 1.5rem 1rem 1.5rem;
+
+        ._h1 {
+          font-size: 2.2rem;
+        }
+        ._paragraph {
+          width: 100%;
+          font-size: 0.9rem;
+        }
+      }
+      ._texttag {
+        padding: 0 1.5rem;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+      }
+    }
   }
   ._texttag {
     font-size: 0.7rem;
