@@ -41,33 +41,24 @@ navToggle.addEventListener("click", function () {
 
 ///location
 const flagElement = document.querySelector(".countryflag img");
-navigator.geolocation.getCurrentPosition(
-  function (position) {
-    const lat = position.coords.latitude;
-    const long = position.coords.longitude;
-    console.log(lat, long);
-    async function getCountry(lat, long) {
-      try {
-        const response = await fetch(
-          `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${long}&localityLanguage=en`,
-        );
-        if (!response.ok) throw new Error("could not get country");
-        const data = await response.json();
-        const countryCode = data.countryCode.toLowerCase();
 
-        flagElement.src = `https://flagcdn.com/w160/${countryCode}.png`;
-        flagElement.alt = `${data.countryName} flag`;
+async function getCountry() {
+  try {
+    const response = await fetch(
+      `https://api.ipinfo.io/lite/me?token=d30b6b409850ca`,
+    );
+    if (!response.ok) throw new Error("could not get country");
+    const data = await response.json();
+    console.log(data);
+    const countryCode = data.country_code.toLowerCase();
 
-        console.log(data.countryName, countryCode);
-      } catch (err) {
-        console.error(err);
-      }
-    }
+    flagElement.src = `https://flagcdn.com/w80/${countryCode}.png`;
+    flagElement.alt = `${data.countryName} flag`;
 
-    getCountry(lat, long);
-  },
-
-  function (err) {
+    console.log(data.country, countryCode);
+  } catch (err) {
     console.error(err);
-  },
-);
+  }
+}
+
+getCountry();
